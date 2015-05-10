@@ -12,11 +12,9 @@ plot1 <- function() {
         
         data <- subset(dataFile, Date %in% c('1/2/2007','2/2/2007'))
         
-        ## Generate plot
+        ## Generate plot and save to PNG
+        png(file = "plot1.png", bg="white", height=480, width=480)
         hist(data$Global_active_power,col='red',xlab="Global Active Power (kilowatts)",main="Global Active Power")
-        
-        ## Save to PNG 
-        dev.copy(png,file="plot1.png")
         dev.off()
                 
 }
